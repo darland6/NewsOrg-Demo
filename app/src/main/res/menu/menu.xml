@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.darland.news.ui.NewsActivity">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/forceDarkMode"
+            android:checkable="true"
+            android:title="@string/dark_mode" />
+        <item
+            android:id="@+id/forceLightMode"
+            android:checkable="true"
+            android:title="@string/light_mode" />
+    </group>
+</menu>

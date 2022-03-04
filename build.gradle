@@ -1,0 +1,46 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+    id 'com.android.application' version '7.1.2' apply false
+    id 'com.android.library' version '7.1.2' apply false
+    id 'org.jetbrains.kotlin.android' version "1.6.10" apply false
+    id 'org.jetbrains.kotlin.plugin.serialization' version '1.6.10'
+    id "org.jlleitschuh.gradle.ktlint" version "10.2.1"
+}
+
+ext {
+    kotlin = '1.6.10'
+    minSdk = 21
+    targetSdk = 32
+    room = '2.4.2'
+    ktor = '1.5.0'
+}
+
+ext.deps = [
+        "news_api_url_debug"     : NEWSAPI_URL,
+        "news_api_url_production": NEWSAPI_URL,
+        "news_api_key_debug"     : NEWSAPI_KEY,
+        "news_api_key_production": NEWSAPI_KEY,
+        "junit"                  : "junit:junit:4.13.2",
+        "lifecycle"              : "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1",
+        "room"                   : "androidx.room:room-runtime:$room",
+        "roomAnno"               : "androidx.room:room-compiler:$room",
+        "swipeRefresh"           : "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0",
+        "viewmodel"              : "androidx.fragment:fragment-ktx:1.4.1",
+        "room_ktx"               : "androidx.room:room-ktx:2.4.2",
+        "ktor_cio"               : "io.ktor:ktor-client-cio:1.6.7",
+        "paging"                 : "androidx.paging:paging-runtime:3.1.0",
+        "coil"                   : "io.coil-kt:coil:1.4.0",
+        "ktor_android"           : "io.ktor:ktor-client-android:$ktor",
+        "ktor_serialization"     : "io.ktor:ktor-client-serialization:$ktor",
+        "kotlin_json"            : 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.1.0',
+        "ktor_logging"           : 'io.ktor:ktor-client-logging-jvm:1.6.7',
+        "coroutines"             : "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0",
+        "koin"                   : "io.insert-koin:koin-android:3.2.0-beta-1",
+        "mockito"                : "org.mockito:mockito-core:4.3.1",
+        "coroutine_test"         : "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.1.0",
+        "mockito_kotlinx"        : "org.mockito.kotlin:mockito-kotlin:4.0.0"
+]
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

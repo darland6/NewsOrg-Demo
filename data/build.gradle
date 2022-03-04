@@ -1,0 +1,49 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlinx-serialization'
+    id 'kotlin-kapt'
+    id "org.jlleitschuh.gradle.ktlint"
+}
+
+android {
+    compileSdk rootProject.ext.targetSdk
+
+    defaultConfig {
+        minSdk rootProject.ext.minSdk
+        targetSdk rootProject.ext.targetSdk
+        // Generate version code based on commits so it keeps increasing
+        // Generate version name based off of version code or manually update
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    testImplementation deps.junit
+    testImplementation deps.coroutine_test
+    testImplementation deps.mockito_kotlinx
+    implementation deps.room
+    kapt deps.roomAnno
+    implementation deps.room_ktx
+    testImplementation deps.mockito
+    implementation deps.ktor_android
+    implementation deps.ktor_serialization
+    implementation deps.kotlin_json
+    implementation deps.ktor_logging
+    implementation deps.ktor_cio
+    implementation deps.coroutines
+}

@@ -31,9 +31,10 @@ android {
 
 dependencies {
     testImplementation deps.junit
-    implementation deps.coroutines
     testImplementation deps.coroutine_test
+    testImplementation deps.mockito_kotlinx
+
+    implementation deps.coroutines
     implementation "io.ktor:ktor-client-gson:1.6.7"
     implementation project(":data")
-    testImplementation deps.mockito_kotlinx
 }

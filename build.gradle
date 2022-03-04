@@ -38,7 +38,8 @@ ext.deps = [
         "koin"                   : "io.insert-koin:koin-android:3.2.0-beta-1",
         "mockito"                : "org.mockito:mockito-core:4.3.1",
         "coroutine_test"         : "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.1.0",
-        "mockito_kotlinx"        : "org.mockito.kotlin:mockito-kotlin:4.0.0"
+        "mockito_kotlinx"        : "org.mockito.kotlin:mockito-kotlin:4.0.0",
+        "ktor_gson"              : "io.ktor:ktor-client-gson:1.6.7"
 ]
 
 task clean(type: Delete) {

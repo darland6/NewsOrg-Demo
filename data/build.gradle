@@ -36,10 +36,12 @@ dependencies {
     testImplementation deps.junit
     testImplementation deps.coroutine_test
     testImplementation deps.mockito_kotlinx
-    implementation deps.room
-    kapt deps.roomAnno
-    implementation deps.room_ktx
     testImplementation deps.mockito
+
+    kapt deps.roomAnno
+
+    implementation deps.room
+    implementation deps.room_ktx
     implementation deps.ktor_android
     implementation deps.ktor_serialization
     implementation deps.kotlin_json

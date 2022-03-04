@@ -3,9 +3,7 @@ package com.darland.news
 import android.annotation.SuppressLint
 import android.content.Context
 import android.net.ConnectivityManager
-import android.net.LinkProperties
 import android.net.Network
-import android.net.NetworkCapabilities
 import android.net.NetworkInfo
 import android.os.Build
 import com.darland.domain.ApiHelper
@@ -39,24 +37,6 @@ class NetworkHelper(private val context: Context) : ApiHelper {
                     override fun onUnavailable() {
                         super.onUnavailable()
                         hasInternet = false
-                    }
-
-                    override fun onCapabilitiesChanged(
-                        network: Network,
-                        networkCapabilities: NetworkCapabilities
-                    ) {
-                        super.onCapabilitiesChanged(network, networkCapabilities)
-                    }
-
-                    override fun onLinkPropertiesChanged(
-                        network: Network,
-                        linkProperties: LinkProperties
-                    ) {
-                        super.onLinkPropertiesChanged(network, linkProperties)
-                    }
-
-                    override fun onBlockedStatusChanged(network: Network, blocked: Boolean) {
-                        super.onBlockedStatusChanged(network, blocked)
                     }
                 })
             }

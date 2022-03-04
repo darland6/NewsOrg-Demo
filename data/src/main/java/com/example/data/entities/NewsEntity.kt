@@ -37,6 +37,7 @@ data class Source(
 
 @Dao
 interface ArticleDao {
+    // TODO the limit here should be passed in and not hardcoded
     @Query("SELECT * from article limit 40 offset :currentCount")
     suspend fun getNewsByOffset(currentCount: Int): List<Article>
 

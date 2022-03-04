@@ -21,7 +21,8 @@ import io.ktor.http.HttpHeaders
 import java.lang.Exception
 
 /**
- * Module Private Api Implementation
+ * Module Private Api Implementation,
+ * TODO Remove locally created HttpClient and pass in through constructor
  */
 class KtorApi(private val url: String, private val apiKey: String) : OnlineApi {
     private val client = HttpClient(CIO) {
@@ -35,7 +36,7 @@ class KtorApi(private val url: String, private val apiKey: String) : OnlineApi {
             parameter("apiKey", apiKey)
             parameter("sortBy", "publishedAt") // TODO allow sorting
             parameter("q", "android") // TODO Allow keyword search
-            parameter("pageSize", 40) // TODO Adjust for best user performance
+            parameter("pageSize", 40) // TODO Adjust for best user performance, This page size should be passed in to all objects that require this
             parameter("language", "en") // TODO Adjust for best performance
         }
         engine {
